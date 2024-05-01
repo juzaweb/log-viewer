@@ -1,0 +1,26 @@
+{
+    "name": "juzaweb/log-viewer",
+    "homepage": "https://juzaweb.com",
+    "description": "Log Viewer Tool for Juzaweb CMS",
+    "license": "GPL-2.0",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Juzaweb\\LogViewer\\Providers\\LogViewerServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Juzaweb\\LogViewer\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0|^8.1",
+        "arcanedev/log-viewer": "^9.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "juzaweb/modules": "dev-latest"
+    }
+}
