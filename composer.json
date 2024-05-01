@@ -2,7 +2,7 @@
     "name": "juzaweb/log-viewer",
     "homepage": "https://juzaweb.com",
     "description": "Log Viewer Tool for Juzaweb CMS",
-    "license": "MIX",
+    "license": "MIT",
     "extra": {
         "laravel": {
             "providers": [
