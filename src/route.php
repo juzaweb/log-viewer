@@ -30,5 +30,7 @@ Route::group(
             ->where('date', '[0-9\-]+');
         Route::delete('/', [LogViewerController::class, 'delete'])
             ->name('admin.logs.error.delete');
+        Route::delete('/clear', [LogViewerController::class, 'clear'])
+            ->name('admin.logs.error.clear');
     }
 );

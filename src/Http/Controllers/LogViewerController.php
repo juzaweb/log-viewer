@@ -24,6 +24,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Juzaweb\CMS\Http\Controllers\BackendController;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class LogViewerController extends BackendController
 {
@@ -177,9 +178,18 @@ class LogViewerController extends BackendController
         );
     }
 
-    public function download($date): \Symfony\Component\HttpFoundation\BinaryFileResponse
+    public function download($date): BinaryFileResponse
     {
         return $this->logViewer->download($date);
+    }
+
+    public function clear(): JsonResponse
+    {
+        return response()->json(
+            [
+                'result' => $this->logViewer->clear() ? 'success' : 'error',
+            ]
+        );
     }
 
     /**
@@ -188,7 +198,7 @@ class LogViewerController extends BackendController
      * @param  array  $data
      * @param  Request  $request
      *
-     * @return \Illuminate\Pagination\LengthAwarePaginator
+     * @return LengthAwarePaginator
      */
     protected function paginate(array $data, Request $request): LengthAwarePaginator
     {
