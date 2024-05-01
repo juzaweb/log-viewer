@@ -18,6 +18,8 @@ class LogViewerServiceProvider extends ServiceProvider
     {
         $this->app['config']->set('log-viewer.route.enabled', false);
 
+        $this->loadViewsFrom(__DIR__ .'/../resources/views', 'log-viewer');
+
         $this->loadRoutesFrom(__DIR__ . '/../route.php');
     }
 }
